@@ -13,7 +13,7 @@ const Page: PageEl = (props, state, refresh, getProps) => {
   let styles = global.styles
 
   const Toxic = (props: {
-    Title1: { Text: string, Value: string },
+    Title1: {Text: string, Value: string },
     Title2: { Text: string, Value: string },
     Title3: { Text: string, Value: string },
     fs1: number, fs2: number
@@ -53,7 +53,7 @@ const Page: PageEl = (props, state, refresh, getProps) => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: "no-repeat",
-        backgroundImage: "url(https://irmapserver.ir/research/25/cloud.webp)"
+        backgroundImage: "url(https://cdn.ituring.ir/research/25/cloud.webp)"
       }}>
 
 
@@ -83,7 +83,7 @@ const Page: PageEl = (props, state, refresh, getProps) => {
             <Toxic
               fs1={10}
               fs2={4}
-              Title1={{ Text: "Feels like", Value: props.data.current_condition[0].FeelsLikeC + "°" }}
+              Title1={{Text: "Feels like", Value: props.data.current_condition[0].FeelsLikeC + "°" }}
               Title2={{ Text: "Humidity", Value: props.data.current_condition[0].humidity + " %" }}
               Title3={{ Text: "Visibility", Value: props.data.current_condition[0].visibility + "km" }}
             />
@@ -140,7 +140,7 @@ export async function getServerSideProps(context) {
     usedquota, quota, quotaunit, status, regdate, expid,
     role, path, devmod, userip, } = session;
 
-  let res = await (await fetch("https://irmapserver.ir/research/api/weather/"))
+  let res = await (await fetch("https://cdn.ituring.ir/research/api/weather/"))
   let data = await res.json()
 
   return {
